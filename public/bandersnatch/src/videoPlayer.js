@@ -9,6 +9,7 @@ class VideoMediaPlayer {
     this.activeItem = {}
     this.selected = {}
     this.videoDuration = 0
+    this.selections = {}
   }
 
   initializeCodec() {
@@ -57,12 +58,14 @@ class VideoMediaPlayer {
   async currentFileResolution() {
     const LOWEST_RESOLUTION = 144
     const prepareUrl = {
-      url: this.manifestJSON.url,
+      url: this.manifestJSON.finalizar.url,
       fileResolution: LOWEST_RESOLUTION,
       fileResolutionTag: this.manifestJSON.fileResolutionTag,
       hostTag: this.manifestJSON.hostTag,
     }
 
+    const url = this.network.parseManifestURL(prepareUrl)
+    return this.network.getProperResolution(url)
   }
 
   async nextChunk(data) {
@@ -74,15 +77,27 @@ class VideoMediaPlayer {
       at: parseInt(this.videoElement.currentTime + selected.at)
     }
 
+    this.manageLag(this.selected)
     // deixa o restante do video rodar enquanto baixa o novo video
     this.videoElement.play()
     await this.fileDownload(selected.url)
   }
 
+  manageLag(selected) {
+    if (!!~this.selections.indexOf(selected.url)) {
+      selected.at += 5
+      return;
+    }
+
+    this.selections.push(selected.url)
+  }
+
   async fileDownload(url) {
+    const fileResolution = await this.currentFileResolution()
+    console.log('currentResolution', fileResolution);
     const prepareUrl = {
       url,
-      fileResolution: 360,
+      fileResolution: fileResolution,
       fileResolutionTag: this.manifestJSON.fileResolutionTag,
       hostTag: this.manifestJSON.hostTag
     }
