@@ -9,7 +9,7 @@ class VideoMediaPlayer {
     this.activeItem = {}
     this.selected = {}
     this.videoDuration = 0
-    this.selections = {}
+    this.selections = []
   }
 
   initializeCodec() {
