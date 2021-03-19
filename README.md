@@ -50,4 +50,4 @@ $ yarn assets
 
 # :bug: Issues
 
-Feel free to **file a new issue** with a respective title and description on the [JS Expert Week - Bandersnatch](https://github.com/AdSoNaTuRaL/js-expert-netflix/issues) repository. If you already found a solution to your problem, **I would love to review your pull request**!
+Feel free to **create a new issue** with a respective title and description on the [JS Expert Week - Bandersnatch](https://github.com/AdSoNaTuRaL/js-expert-netflix/issues) repository. If you already found a solution to your problem, **I would love to review your pull request**!
