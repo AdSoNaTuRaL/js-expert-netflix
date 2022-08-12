@@ -1,9 +1,7 @@
-<h1 align="center">JS Expert Week - Bandersnatch</h1>
+<h1 align="center">Bandersnatch</h1>
 
 <div align="center">
-  <sub>Bandersnatch project made in JS Expert week | @ErickWendel. Built with ❤︎ by
-    <a href="https://github.com/AdSoNaTuRaL">Adson Henrique</a>
-  </sub>
+  <sub>Bandersnatch project</sub>
 </div>
 
 # :pushpin: Table of Contents
@@ -50,4 +48,4 @@ $ yarn assets
 
 # :bug: Issues
 
-Feel free to **create a new issue** with a respective title and description on the [JS Expert Week - Bandersnatch](https://github.com/AdSoNaTuRaL/js-expert-netflix/issues) repository. If you already found a solution to your problem, **I would love to review your pull request**!
+Feel free to **create a new issue** with a respective title and description on the [Bandersnatch](https://github.com/AdSoNaTuRaL/js-expert-netflix/issues) repository. If you already found a solution to your problem, **I would love to review your pull request**!
